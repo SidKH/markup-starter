@@ -125,7 +125,7 @@
   /**
    * Creating production folder without unnecessary files
    */
-  gulp.task('prod', ['cleanProd'], function () {    
+  gulp.task('production', ['cleanProduction'], function () {
     gulp.src(['./**/*',
       '!vendor_entries',
       '!vendor_entries/**/*',
@@ -151,7 +151,7 @@
           .pipe(gulp.dest('./production'));
   });
 
-  gulp.task('cleanProd', function () {
+  gulp.task('cleanProduction', function () {
     return gulp.src('./production/', {read: false})
       .pipe(rimraf());
   });
