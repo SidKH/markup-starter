@@ -54,7 +54,7 @@
    * Build styles for application from SASS
    */
   gulp.task('buildSass', function () {
-    gulp.src('./scss/app.scss')
+    gulp.src('./scss/*.scss')
       .pipe(sourcemaps.init({loadMaps: true}))
       .pipe(sass().on('error', function (err) {
         showError.apply(this, ['Sass compile error', err]);
@@ -174,6 +174,7 @@
       }))
       .pipe(iconfont({
         fontName: fontName,
+        formats: ['ttf', 'eot', 'woff', 'svg', 'woff2'],
         normalize: true
        }))
       .pipe(gulp.dest('./scss/fonts/iconfont/'));
